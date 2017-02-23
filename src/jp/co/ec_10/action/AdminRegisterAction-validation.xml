@@ -1,0 +1,79 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+
+<validators>
+
+    <!-- １．名前フィールドの未入力入力チェック -->
+    <field name="ad_NAME">
+        <field-validator type="requiredstring">
+            <message>※管理者名が入力されていません</message>
+        </field-validator>
+    </field>
+
+    <field name="ad_ID">
+        <field-validator type="requiredstring">
+            <message>※管理者IDが入力されていません</message>
+        </field-validator>
+    </field>
+
+ 	<field name="ad_PASS">
+        <field-validator type="requiredstring">
+            <message>※パスワードが入力されていません</message>
+        </field-validator>
+    </field>
+
+ 	<field name="ad_PASS2">
+        <field-validator type="requiredstring">
+            <message>※確認用パスワードが入力されていません</message>
+        </field-validator>
+    </field>
+
+
+	<!-- ２．名前フィールドの桁数チェック -->
+	<field name="ad_ID">
+		<field-validator type="stringlength">
+			<param name="minLength">8</param>
+			<param name="maxLength">16</param>
+			<message>※管理者IDは8-16桁で入力してください</message>
+		</field-validator>
+	</field>
+
+	<field name="ad_PASS">
+		<field-validator type="stringlength">
+			<param name="minLength">8</param>
+			<param name="maxLength">16</param>
+			<message>※パスワードは8-16桁で入力してください</message>
+		</field-validator>
+	</field>
+
+	<field name="ad_PASS2">
+		<field-validator type="stringlength">
+			<param name="minLength">8</param>
+			<param name="maxLength">16</param>
+			<message>※確認パスワードは8-16桁で入力してください</message>
+		</field-validator>
+	</field>
+
+	<!-- ３．名前フィールドの入力文字条件チェック -->
+	<field name="ad_ID">
+		<field-validator type="regex">
+			<param name="regex">^[0-9a-zA-Z]+</param>
+			<message>※半角英数字で入力してください</message>
+		</field-validator>
+	</field>
+
+	<field name="ad_PASS">
+		<field-validator type="regex">
+			<param name="regex">^[0-9a-zA-Z]+</param>
+			<message>※半角英数字で入力してください</message>
+		</field-validator>
+	</field>
+
+	<field name="ad_PASS2">
+		<field-validator type="regex">
+			<param name="regex">^[0-9a-zA-Z]+</param>
+			<message>※半角英数字で入力してください</message>
+		</field-validator>
+	</field>
+
+</validators>

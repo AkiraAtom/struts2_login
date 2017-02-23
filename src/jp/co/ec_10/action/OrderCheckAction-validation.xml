@@ -1,0 +1,85 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+
+<validators>
+
+    <!-- 1．名前フィールドの未入力入力チェック -->
+    <field name="customer_name">
+        <field-validator type="requiredstring">
+            <message>お名前を入力してください</message>
+        </field-validator>
+    </field>
+
+ 	<field name="mail">
+        <field-validator type="requiredstring">
+            <message>メールアドレスを入力してください</message>
+        </field-validator>
+    </field>
+
+    <field name="tel">
+        <field-validator type="requiredstring">
+            <message>電話番号を入力してください</message>
+        </field-validator>
+    </field>
+
+    <field name="post">
+        <field-validator type="requiredstring">
+            <message>郵便番号を入力してください</message>
+        </field-validator>
+    </field>
+
+    <field name="ken">
+        <field-validator type="requiredstring">
+            <message>都道府県を選択してください</message>
+        </field-validator>
+    </field>
+
+    <field name="address">
+        <field-validator type="requiredstring">
+            <message>ご住所を入力してください</message>
+        </field-validator>
+    </field>
+
+
+	<!-- 2．名前フィールドの桁数チェック -->
+	<field name="tel">
+		<field-validator type="stringlength">
+			<param name="minLength">10</param>
+			<param name="maxLength">11</param>
+			<message>電話番号は10～11桁で入力してください</message>
+		</field-validator>
+	</field>
+
+		<field name="post">
+		<field-validator type="stringlength">
+			<param name="minLength">7</param>
+			<param name="maxLength">7</param>
+			<message>郵便番号は7桁で入力して下さい</message>
+		</field-validator>
+	</field>
+
+
+	<!-- 3．名前フィールドの入力文字条件チェック -->
+	<field name="tel">
+		<field-validator type="regex">
+			<param name="regex">^[0-9]+</param>
+			<message>電話番号は半角数字で入力してください</message>
+		</field-validator>
+	</field>
+
+	<field name="post">
+		<field-validator type="regex">
+			<param name="regex">^[0-9]+</param>
+			<message>郵便番号は半角数字で入力してください</message>
+		</field-validator>
+	</field>
+
+	<!-- 4. Eメールアドレスの書式チェック -->
+	<field name="mail">
+		<field-validator type="email">
+			<param name="email">\\b(^[_A-Za-z0-9-](\\.[_A-Za-z0-9-])*@([A-Za-z0-9-])+((\\.com)|(\\.net)|(\\.org)|(\\.info)|(\\.edu)|(\\.mil)|(\\.gov)|(\\.biz)|(\\.ws)|(\\.us)|(\\.tv)|(\\.cc)|(\\.aero)|(\\.arpa)|(\\.coop)|(\\.int)|(\\.jobs)|(\\.museum)|(\\.pro)|(\\.travel)|(\\.nato)|(\\..{2,3})|(\\..{2,3}\\..{2,3}))$)\\b</param>
+			<message>メールアドレスが不正です</message>
+		</field-validator>
+	</field>
+
+</validators>

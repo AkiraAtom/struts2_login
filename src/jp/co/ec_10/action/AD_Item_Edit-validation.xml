@@ -1,0 +1,55 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+
+<validators>
+
+    <!-- １．名前フィールドの未入力入力チェック -->
+    <field name="inputitem">
+        <field-validator type="requiredstring">
+            <message>　商品が空白でした</message>
+        </field-validator>
+    </field>
+    <field name="inputprice">
+        <field-validator type="requiredstring">
+            <message>　値段が空白でした</message>
+        </field-validator>
+    </field>
+    <field name="inputstock">
+        <field-validator type="requiredstring">
+            <message>　在庫が空白でした</message>
+        </field-validator>
+    </field>
+
+	<!-- ２．名前フィールドの入力文字条件チェック -->
+	<field name="inputprice">
+		<field-validator type="regex">
+			<param name="regex">^[0-9]+</param>
+			<message>　値段は半角数字で入力してください</message>
+		</field-validator>
+	</field>
+
+	<field name="inputstock">
+		<field-validator type="regex">
+			<param name="regex">^[0-9]+</param>
+			<message>　在庫は半角数字で入力してください</message>
+		</field-validator>
+	</field>
+
+	<!-- ３．数値は１以上○○未満にする -->
+	<field name="inputprice">
+		<field-validator type="stringlength">
+			<param name="minLength">1</param>
+			<param name="maxLength">6</param>
+			<message>　値段は1以上1,000,000未満を入力して下さい</message>
+		</field-validator>
+	</field>
+
+	<field name="inputstock">
+		<field-validator type="stringlength">
+			<param name="minLength">1</param>
+			<param name="maxLength">3</param>
+			<message>　在庫は1以上1,000未満を入力して下さい</message>
+		</field-validator>
+	</field>
+
+</validators>

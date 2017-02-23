@@ -1,0 +1,94 @@
+@charset "shift_jis";
+
+/* ===================== import each stylesheet ===================== */
+
+@import url("reset.css");
+@import url("text.css");
+@import url("templates.css");
+@import url("general.css");
+@import url("hdr-ftr.css");
+
+
+.msg{
+	margin-top:8px;
+}
+.cart{
+	margin-left:10px;
+	margin-top:-14px;
+}
+
+.icn_img{
+	margin-top:8px;
+}
+
+#nav{
+	/*float:left;*/
+	width:880px;
+	margin-left:550px;
+	margin-top:0px;
+	margin-right:-550px;
+}
+
+#main{
+	float:left;
+	margin-top:30px;
+}
+
+#cart_ck{
+	font-size:150%;
+	float:left;
+	width:160px;
+	height:32px;
+	margin-left:30px;
+	margin-top:5px;
+	margin-right:-30px;
+}
+
+#admin_in{
+/*	width:200px;
+	height:100px;
+	background-color:#CC0000;
+*/
+}
+
+#admin_in_info{
+/*	color:white;
+	margin-left:20px;
+	padding-top:10px;
+*/
+	margin-left:1000px;
+	margin-top:-20px;
+}
+
+.foot-info{
+	padding-left:150px;
+}
+
+/*
+.footer{
+	position:absolute;
+	margin-top:640px;
+	margin-right:-320px;
+}
+
+.cmn_cl{
+	padding-left:630px;
+}*/
+
+#blank{
+	clear:both;
+	width:1000px;
+	height:400px;
+	background-color:white;
+}
+
+#blank_area{
+	clear:both;
+	width:1000px;
+	height:0px;
+}
+
+#logo{
+	position:absolute;
+	padding-left:200px;
+}

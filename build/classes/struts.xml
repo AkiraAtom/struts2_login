@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <constant name="struts.devMode" value="false" />
+
+   <package name="jp.co.ec_10.action" extends="struts-default">
+
+<!-- マイショップ側 Action -->
+   <action name="OrderCheck"
+   		   class="jp.co.ec_10.action.OrderCheckAction"
+   		   method="execute">
+   		     <result name = "success">/ms_check.jsp</result>
+   		     <result name = "error">/ms_customer.jsp</result>
+   		     <result name = "input">/ms_customer.jsp</result>
+   </action>
+
+   <action name="Order"
+   		   class="jp.co.ec_10.action.OrderAction"
+   		   method="execute">
+   		     <result name = "success">/ms_order.jsp</result>
+   </action>
+
+   <action name="ItemSearch"
+   		   class="jp.co.ec_10.action.ItemSearchAction"
+   		   method="execute">
+   		     <result name = "success">/ms_item_info_after.jsp</result>
+   		     <result name = "error">/ms_item_info_after.jsp</result>
+   </action>
+   <action name="CartAction"
+   		   class="jp.co.ec_10.action.CartAction"
+   		   method="execute">
+   		     <result name="success">/ms_cart.jsp</result>
+   </action>
+   <action name="CartDelete"
+   		   class="jp.co.ec_10.action.CartDeleteAction"
+   		   method="execute">
+   	   	<result name="success" type="chain">CartAction</result>
+   </action>
+      <action name="ItemSearchPagingAction"
+   		   class="jp.co.ec_10.action.ItemSearchPagingAction"
+   		   method="execute">
+   		     <result name="success">/ms_item_info_after.jsp</result>
+   </action>
+            <action name="MsItemInfoSearch"
+   		   class="jp.co.ec_10.action.MsItemInfoSearch"
+   		   method="execute">
+   		     <result name="success">/ms_item_info.jsp</result>
+   </action>
+
+
+<!-- 管理者側 Action -->
+   <action name="loginaction"
+   		   class="jp.co.ec_10.action.Login_Action"
+   		   method="execute">
+   		     <result name = "success">/ad_item_info.jsp</result>
+   		     <result name = "error">/ad_login.jsp</result>
+   		     <result name = "input">/ad_login.jsp</result>
+   </action>
+   <action name="RegisterAction"
+   		   class="jp.co.ec_10.action.AdminRegisterAction"
+   		   method="execute">
+   		     <result name = "success">/ad_register.jsp</result>
+   		     <result name = "error">/ad_register.jsp</result>
+   		     <result name = "input">/ad_register.jsp</result>
+   </action>
+   <action name="itemedit"
+   		   class="jp.co.ec_10.action.AD_Item_Edit"
+   		   method="itemedit">
+   		     <result name = "success">/ad_item_info.jsp</result>
+   		     <result name = "error">/ad_item_edit.jsp</result>
+   		     <result name = "input">/ad_item_edit.jsp</result>
+   </action>
+   <action name="itemdel"
+   		   class="jp.co.ec_10.action.AD_Item_Del"
+   		   method="itemdel">
+   		     <result name = "success">/ad_item_info.jsp</result>
+   		     <result name = "error">/ad_item_edit.jsp</result>
+   </action>
+   <action name="itemreg"
+   		   class="jp.co.ec_10.action.AD_Item_Edit"
+   		   method="itemreg">
+   		     <result name = "success">/ad_item_register.jsp</result>
+   		     <result name = "error">/ad_item_register.jsp</result>
+   		     <result name = "input">/ad_item_register.jsp</result>
+   </action>
+  <action name="paging"
+   		   class="jp.co.ec_10.action.ChangePaging"
+   		   method="changepaging">
+   		     <result name = "adtop">/ad_item_info.jsp</result>
+   		     <result name = "adorder">/ad_order_info.jsp</result>
+   		     <result name = "adedit">/ad_item_edit.jsp</result>
+   		     <result name = "aditem">/ad_item_register.jsp</result>
+   		     <result name = "admin">/ad_register.jsp</result>
+   		     <result name = "login">/ad_login.jsp</result>
+   		     <result name = "logout">/fwd_ms_item_info.jsp</result>
+   </action>
+   <action name="page"
+   		   class="jp.co.ec_10.action.AD_Paging"
+   		   method="page">
+   		     <result name = "item">/ad_item_info.jsp</result>
+   		     <result name = "order">/ad_order_info.jsp</result>
+   		     <result name = "error">/ad_login.jsp</result>
+   </action>
+   <action name="adsearch"
+   		   class="jp.co.ec_10.action.AD_Item_Search"
+   		   method="Item_Search">
+   		     <result name = "success">/ad_item_info.jsp</result>
+   </action>
+
+   </package>
+
+</struts>
